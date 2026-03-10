@@ -51,7 +51,6 @@ const botResponses = [
   'หากต้องการพูดคุยกับผู้เชี่ยวชาญโดยตรง คุณสามารถนัดหมายได้ในแท็บ "นัดหมาย"',
 ];
 
-let botIndex = 0;
 
 export default function Consultation() {
   const [tab, setTab] = useState<Tab>('chat');
@@ -62,6 +61,7 @@ export default function Consultation() {
   const [selectedTime, setSelectedTime] = useState('');
   const [bookingDone, setBookingDone] = useState(false);
   const [preferredFormat, setPreferredFormat] = useState<'online' | 'chat' | ''>('');
+  const [botIndex, setBotIndex] = useState(0);
 
   const sendMessage = () => {
     if (!inputText.trim()) return;
@@ -73,7 +73,7 @@ export default function Consultation() {
       sender: 'bot',
       time: now,
     };
-    botIndex++;
+    setBotIndex((prev) => prev + 1);
     setMessages((prev) => [...prev, userMsg, botMsg]);
     setInputText('');
   };
