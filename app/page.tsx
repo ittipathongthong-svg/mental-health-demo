@@ -1,5 +1,9 @@
 import Link from 'next/link';
 
+const _bannerEnv = process.env.NEXT_PUBLIC_BANNER_URL || '/banner.jpg';
+// Allow only relative paths and absolute http(s) URLs to prevent CSS injection
+const bannerUrl = /^(\/|https?:\/\/)/.test(_bannerEnv) ? _bannerEnv : '/banner.jpg';
+
 export default function Home() {
   const features = [
     {
@@ -45,8 +49,12 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-purple-700 text-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
+      <section
+        className="relative text-white py-20 px-4 bg-blue-900"
+        style={{ backgroundImage: `url('${bannerUrl}')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      >
+        <div className="absolute inset-0 bg-blue-900/70" />
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <div className="text-6xl mb-6">🧠</div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             แพลตฟอร์มดูแลสุขภาพจิต
