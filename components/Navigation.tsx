@@ -1,8 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
+
+const logoUrl = process.env.NEXT_PUBLIC_LOGO_URL || '/logo.svg';
 
 const navLinks = [
   { href: '/', label: 'หน้าหลัก' },
@@ -21,9 +24,8 @@ export default function Navigation() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 font-bold text-blue-700 text-lg">
-            <span className="text-2xl">🧠</span>
-            <span className="hidden sm:inline">สุขภาพจิต</span>
+          <Link href="/" className="flex items-center">
+            <Image src={logoUrl} alt="สุขภาพจิต Logo" width={180} height={44} className="h-8 w-auto" unoptimized priority />
           </Link>
 
           {/* Desktop links */}

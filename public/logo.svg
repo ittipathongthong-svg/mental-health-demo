@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 44" width="180" height="44">
+  <!-- Icon circle -->
+  <circle cx="22" cy="22" r="20" fill="#dbeafe"/>
+  <!-- Heart path -->
+  <path d="M22 31 C21.5 30.5 11 23.5 11 17 C11 13.5 13.5 11 17 11 C19.2 11 21.2 12.2 22 14 C22.8 12.2 24.8 11 27 11 C30.5 11 33 13.5 33 17 C33 23.5 22.5 30.5 22 31Z" fill="#1d4ed8"/>
+  <!-- Text -->
+  <text x="52" y="29" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="700" fill="#1d4ed8">สุขภาพจิต</text>
+</svg>
